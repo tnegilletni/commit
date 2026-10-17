@@ -1,0 +1,12 @@
+#include <iostream>
+
+int main() {
+    int n, sum = 0;
+    std::cout << "До какого числа считать? ";
+    std::cin >> n;
+
+    for (int i = 1; i <= n; i++) sum += i;
+
+    std::cout << "Сумма от 1 до " << n << " = " << sum << std::endl;
+    return 0;
+}
