@@ -1,25 +1,39 @@
 #include <iostream>
 using namespace std;
+
 int main() {
     setlocale(LC_ALL, "ru_RU.UTF-8");
+    
     double num1; 
-    int n; // переменная для степени
-    cout << "Введите число:";
-    cin >> num1; // ввод числа
-    cout <<"Введите степень:";
-    cin >> n;// ввод степени
+    int n; 
+
+    cout << "Введите число: ";
+    if (!(cin >> num1)) {
+        cout << "Ошибка: введено некорректное значение числа!" << endl;
+        return 1;
+    }
+
+    cout << "Введите степень: ";
+    if (!(cin >> n)) {
+        cout << "Ошибка: введено некорректное значение степени!" << endl;
+        return 1;
+    }
 
     double result = 1;
-    if (n>=0) {
-        for (int i=0; i<n; i++){//умножаем число само на себя пока i не станет равным n
+    
+    if (n >= 0) {
+        for (int i = 0; i < n; i++) {
             result *= num1;
         }
     }
     else {
-        for (int i=0; i<(-n); i++){//умножам число само на себя пока -i не станет равным -n 
+        for (int i = 0; i < (-n); i++) { 
             result *= num1;
         }
-        result = 1.0/result;
+        result = 1.0 / result;
     }
-    cout<< num1 << "^" << n << " = " << result<<endl;
+
+    cout << num1 << "^" << n << " = " << result << endl;
+
+    return 0;
 }
